@@ -7,25 +7,11 @@ const app = require('./app');
 chai.use(chaiHttp);
 chai.should();
 
-describe('Angular Issues', () => {
-	describe('GET /angular/issues', () => {
-		it('should get last angular issues', (done) => {
-			chai.request(app)
-				.get('/angular/issues')
-				.end((err, res) => {
-					res.should.have.status(200);
-					res.body.should.be.a('object');
-					done();
-				});
-		});
-	});
-});
-
 describe('NodeJS Articles', () => {
-	describe('GET /nodejs/articles', () => {
+	describe('GET /api/articles/node', () => {
 		it('should get last nodejs articles', (done) => {
 			chai.request(app)
-				.get('/nodejs/articles')
+				.get('/api/articles/node')
 				.end((err, res) => {
 					res.should.have.status(200);
 					res.body.should.be.a('object');
