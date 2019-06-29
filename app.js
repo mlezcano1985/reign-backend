@@ -7,6 +7,7 @@ const compression = require('compression');
 const db = require('./db');
 const routes = require('./api/routes');
 const task = require('./api/tasks/update_node_articles.task');
+const cors = require('cors');
 
 var app = express();
 
@@ -25,6 +26,9 @@ app.use(compression());
 
 //database
 connect();
+
+//cors
+app.use(cors());
 
 //routes
 routes(app);
