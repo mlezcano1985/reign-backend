@@ -2,8 +2,8 @@
 
 # Descripción
 Simple aplicación desarrollada en ExpressJS que expone 2 endpoints.
-- GET: `/angular/issues`: Muestra información asociada a los issues de angular en GitHub.
-- GET: `/nodejs/articles`: Muestra información asociada a artículos relacionados con NodeJS.
+- GET: `api/articles/node`: Muestra información asociada a artículos relacionados con NodeJS.
+- DELETE: `api/articles/node/:id`: Elimina un artículo dado su id.
 
 # Requisitos mínimos
 - Instalar versión estable de [NodeJS](https://nodejs.org/es/download/).
@@ -12,11 +12,8 @@ Simple aplicación desarrollada en ExpressJS que expone 2 endpoints.
 # Pasos para probar la API
 - Clonar o descargar el repositorio.
 - Instalar dependencias usando el comando `npm install`.
-- Correr migración para insertar datos de prueba en la bd de mongo con el comando `npm run migrate`.
+- Correr migración para crear colección en la bd de mongo con el comando `npm run migrate`.
 - Ejecutar el comando `npm start` para iniciar la API. Aparecerá un log en la consola para indicar que la app y la bd están en ejecución.
-- Abrir el browser para probar los endpoint expuestos.
-    - Lista de issues de Angular: [http://localhost:3000/angular/issues](http://localhost:3000/angular/issues).
-    - Lista de artículos de NodeJS: [http://localhost:3000/nodejs/articles](http://localhost:3000/nodejs/articles).
 
 # Comandos disponibles
 - `npm start`: Inicia la api.
