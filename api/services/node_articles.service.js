@@ -7,6 +7,8 @@ class NodeArticlesService {
 		try {
 			const docs = await NodeArticles.model.find({
 				'delete_at': null
+			}).sort({
+				'created_at': -1
 			}).lean().exec();
 			return {
 				'total': docs.length,
