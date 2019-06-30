@@ -19,7 +19,9 @@ const run = async () => {
 						'objectID': d.objectID
 					};
                     
-					bulk.find({'objectID': d.objectID}).upsert().updateOne(doc);
+					bulk.find({'objectID': d.objectID}).upsert().updateOne({
+						'$set': doc
+					});
 				});
                 
 				await bulk.execute();

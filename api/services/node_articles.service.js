@@ -6,7 +6,7 @@ class NodeArticlesService {
 	async getAll() {
 		try {
 			const docs = await NodeArticles.model.find({
-				'delete_at': null
+				'deleted_at': null
 			}).sort({
 				'created_at': -1
 			}).lean().exec();
@@ -27,7 +27,7 @@ class NodeArticlesService {
 		try {
 			await NodeArticles.model.findByIdAndUpdate(id, {
 				'$set': {
-					'delete_at': new Date()
+					'deleted_at': new Date()
 				}
 			}).lean().exec();
 		} catch (err) {
